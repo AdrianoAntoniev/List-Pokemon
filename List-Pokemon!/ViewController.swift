@@ -10,9 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
     var pokemonsNameAndUrl: [PokemonNameAndUrl] = []
-
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.delegate = self
+        tableView.dataSource = self
         
         if let url = URL(string: Constants.POKEMON_API) {
             let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -29,14 +33,13 @@ class ViewController: UIViewController {
                                                             url: pokemonUrl)
                             
                             self.pokemonsNameAndUrl.append(pokemon)
+                            
+                            DispatchQueue.main.async {
+                                self.tableView.reloadData()
+                            }
                         }
                     }
-                    
-                    for p in self.pokemonsNameAndUrl {
-                        print(p.name)
-                    }
                 }
-                
             }
             
             task.resume()
@@ -44,3 +47,17 @@ class ViewController: UIViewController {
     }
 }
 
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return pokemonsNameAndUrl.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
+        
+        cell?.textLabel?.text = pokemonsNameAndUrl[indexPath.row].name
+        
+        return cell!
+    }
+    
+}
