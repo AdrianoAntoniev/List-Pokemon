@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -62,6 +62,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D71C9EAE252500AA00AC9F8B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D7A359312523C8EF00420D29 /* LaunchScreen.storyboard */,
+				D7A3592C2523C8EC00420D29 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		D72555832523CE5D002ACCCB /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,7 +113,7 @@
 			children = (
 				D7A3593A2523C92000420D29 /* Supporting Files */,
 				D749CACC2523E93400F975EA /* Controller */,
-				D7A3592C2523C8EC00420D29 /* Main.storyboard */,
+				D71C9EAE252500AA00AC9F8B /* View */,
 				D7A3592F2523C8EF00420D29 /* Assets.xcassets */,
 				D7A359342523C8EF00420D29 /* Info.plist */,
 				D72555832523CE5D002ACCCB /* Models */,
@@ -119,7 +128,6 @@
 				D7A3593B2523CC1D00420D29 /* Constants.swift */,
 				D7A359262523C8EC00420D29 /* AppDelegate.swift */,
 				D7A359282523C8EC00420D29 /* SceneDelegate.swift */,
-				D7A359312523C8EF00420D29 /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -130,7 +138,6 @@
 				61EB6BF90E0C554154D66A02 /* Pods-List-Pokemon!.debug.xcconfig */,
 				4C456BCEABC96FD6318B2FAA /* Pods-List-Pokemon!.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};

@@ -7,19 +7,23 @@
 //
 
 import UIKit
+import TagListView
 
 class DetailsViewController: UIViewController {
     @IBOutlet weak var pokemonNameLabel: UILabel!
     @IBOutlet weak var pokemonImage: UIImageView!
     @IBOutlet weak var weightLabel: UILabel!
     @IBOutlet weak var heightLabel: UILabel!
-    @IBOutlet weak var pokemonTypesLabel: UILabel!
+    @IBOutlet weak var tagListView: TagListView!
+    
     
     var pokemonUrl: String?
     var pokemonName: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        configureTagListView()
         
         if let name = pokemonName, let url = pokemonUrl {
             pokemonNameLabel.text = name
@@ -42,11 +46,10 @@ class DetailsViewController: UIViewController {
                             self.pokemonImage.loadDefaultImage()
                         }
                         
-                        var pokemonTypesText = "Espécie: "
                         for pokeType in pokeDecoded.types {
-                            pokemonTypesText += "\(pokeType.type.name!.capitalized) "
+                            self.tagListView.addTag(pokeType.type.name!.capitalized)
                         }
-                        self.pokemonTypesLabel.text = pokemonTypesText
+                        
                         self.heightLabel.text = "Altura: \(pokeDecoded.height)"
                         self.weightLabel.text = "Peso: \(pokeDecoded.weight)"
                     }
@@ -57,6 +60,11 @@ class DetailsViewController: UIViewController {
         }
     }
 
+    private func configureTagListView() {
+        tagListView.tintColor = .yellow
+        tagListView.cornerRadius = 10
+        tagListView.textFont = UIFont(name: Constants.FONT_NAME, size: CGFloat(Constants.FONT_SIZE))!
+    }
 }
 
 extension UIImageView {
