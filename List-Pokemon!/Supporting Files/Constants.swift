@@ -15,5 +15,6 @@ struct Constants {
     // Constants relative to UI
     static let REUSABLE_CELL_FOR_TABLEVIEW = "Cell"
     static let DETAILS_SEGUE_NAME = "DetailsSegue"
+    static let SEARCH_BAR_PLACEHOLDER = "Digite o nome do Pokémon"
     
 }
