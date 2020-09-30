@@ -9,5 +9,11 @@
 import Foundation
 
 struct Constants {
+    // URLS
     static let POKEMON_API = "https://pokeapi.co/api/v2/pokemon?limit=1051&offset=0"
+    
+    // Constants relative to UI
+    static let REUSABLE_CELL_FOR_TABLEVIEW = "Cell"
+    static let DETAILS_SEGUE_NAME = "DetailsSegue"
+    
 }

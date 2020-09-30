@@ -9,8 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
-    var pokemonsNameAndUrl: [PokemonNameAndUrl] = []
     @IBOutlet weak var tableView: UITableView!
+    var pokemonsNameAndUrl: [PokemonNameAndUrl] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +45,18 @@ class ViewController: UIViewController {
             task.resume()
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Constants.DETAILS_SEGUE_NAME {
+            if let detailsViewController = segue.destination as? DetailsViewController {
+                if let pokemon = sender as? PokemonNameAndUrl {
+                    detailsViewController.pokemonUrl = pokemon.url
+                    detailsViewController.pokemonName = pokemon.name
+                }
+            }
+        }
+    }
+    
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
@@ -60,4 +72,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         return cell!
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: Constants.DETAILS_SEGUE_NAME, sender: pokemonsNameAndUrl[indexPath.row])
+    }
 }
