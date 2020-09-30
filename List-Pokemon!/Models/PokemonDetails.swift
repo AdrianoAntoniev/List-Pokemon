@@ -12,6 +12,7 @@ struct PokemonDetailsData: Decodable {
     var height: Int
     var weight: Int
     var sprites: Sprite
+    var types: [Types]
     
     struct Sprite: Decodable {
         var other: Other
@@ -23,10 +24,18 @@ struct PokemonDetailsData: Decodable {
                 var frontDefault: String?
             }
             
-            private enum CodingKeys : String, CodingKey {
+            private enum CodingKeys: String, CodingKey {
                 case officialArtwork = "official-artwork"
             }
         }
-        
     }
+    
+    struct Types: Decodable {
+        var type: PokeType
+        
+        struct PokeType: Decodable {
+            var name: String?
+        }
+    }
+    
 }

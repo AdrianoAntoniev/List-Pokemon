@@ -13,6 +13,7 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var pokemonImage: UIImageView!
     @IBOutlet weak var weightLabel: UILabel!
     @IBOutlet weak var heightLabel: UILabel!
+    @IBOutlet weak var pokemonTypesLabel: UILabel!
     
     var pokemonUrl: String?
     var pokemonName: String?
@@ -35,10 +36,17 @@ class DetailsViewController: UIViewController {
                         if let safeFrontUrlImageString = pokeDecoded.sprites.other.officialArtwork.frontDefault {
                             if let safeUrlOfPokemonImage = URL(string: safeFrontUrlImageString) {
                                 self.pokemonImage.loadImage(withUrl: safeUrlOfPokemonImage)
+                                
                             }
                         } else {
                             self.pokemonImage.loadDefaultImage()
                         }
+                        
+                        var pokemonTypesText = "Espécie: "
+                        for pokeType in pokeDecoded.types {
+                            pokemonTypesText += "\(pokeType.type.name!.capitalized) "
+                        }
+                        self.pokemonTypesLabel.text = pokemonTypesText
                         self.heightLabel.text = "Altura: \(pokeDecoded.height)"
                         self.weightLabel.text = "Peso: \(pokeDecoded.weight)"
                     }

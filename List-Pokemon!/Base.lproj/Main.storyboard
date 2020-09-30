@@ -59,37 +59,46 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Height:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bJ2-sF-Qlu">
-                                <rect key="frame" x="20" y="538" width="374" height="23.5"/>
+                                <rect key="frame" x="20" y="537.5" width="374" height="23.5"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GaW-nf-aYp">
-                                <rect key="frame" x="20" y="591" width="374" height="23.5"/>
+                                <rect key="frame" x="20" y="590" width="374" height="23.5"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wuc-fY-2t8">
-                                <rect key="frame" x="20" y="191" width="374" height="305"/>
+                                <rect key="frame" x="20" y="191" width="374" height="304.5"/>
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kqD-Uq-4Vi">
+                                <rect key="frame" x="20" y="642.5" width="374" height="23.5"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="GaW-nf-aYp" firstAttribute="leading" secondItem="blC-Oa-2Yz" secondAttribute="leading" constant="20" id="6iq-4Q-gf2"/>
                             <constraint firstItem="Wuc-fY-2t8" firstAttribute="top" secondItem="mvw-qU-2dr" secondAttribute="bottom" constant="44" id="9T4-lR-zeN"/>
-                            <constraint firstItem="GaW-nf-aYp" firstAttribute="top" secondItem="bJ2-sF-Qlu" secondAttribute="bottom" constant="29.5" id="Cak-6T-wCC"/>
-                            <constraint firstItem="blC-Oa-2Yz" firstAttribute="bottom" secondItem="GaW-nf-aYp" secondAttribute="bottom" constant="247.5" id="JPm-e1-ZKl"/>
+                            <constraint firstItem="GaW-nf-aYp" firstAttribute="top" secondItem="bJ2-sF-Qlu" secondAttribute="bottom" constant="29" id="Cak-6T-wCC"/>
                             <constraint firstItem="mvw-qU-2dr" firstAttribute="leading" secondItem="blC-Oa-2Yz" secondAttribute="leading" constant="20" id="MGg-Nn-DvH"/>
                             <constraint firstItem="mvw-qU-2dr" firstAttribute="top" secondItem="blC-Oa-2Yz" secondAttribute="top" constant="24" id="SAs-kZ-k3R"/>
                             <constraint firstItem="blC-Oa-2Yz" firstAttribute="trailing" secondItem="bJ2-sF-Qlu" secondAttribute="trailing" constant="20" id="XCB-C9-UFo"/>
                             <constraint firstItem="blC-Oa-2Yz" firstAttribute="trailing" secondItem="mvw-qU-2dr" secondAttribute="trailing" constant="20" id="cxb-ee-O3W"/>
                             <constraint firstItem="bJ2-sF-Qlu" firstAttribute="top" secondItem="Wuc-fY-2t8" secondAttribute="bottom" constant="42" id="e7d-fQ-vdR"/>
+                            <constraint firstItem="kqD-Uq-4Vi" firstAttribute="top" secondItem="GaW-nf-aYp" secondAttribute="bottom" constant="29" id="eWn-jd-Nb2"/>
+                            <constraint firstItem="kqD-Uq-4Vi" firstAttribute="leading" secondItem="blC-Oa-2Yz" secondAttribute="leading" constant="20" id="etn-M1-vx3"/>
                             <constraint firstItem="bJ2-sF-Qlu" firstAttribute="leading" secondItem="blC-Oa-2Yz" secondAttribute="leading" constant="20" id="hkv-yw-KuS"/>
                             <constraint firstItem="blC-Oa-2Yz" firstAttribute="trailing" secondItem="Wuc-fY-2t8" secondAttribute="trailing" constant="20" id="iSd-lr-hiQ"/>
+                            <constraint firstItem="blC-Oa-2Yz" firstAttribute="bottom" secondItem="kqD-Uq-4Vi" secondAttribute="bottom" constant="196" id="jGm-fV-Q3S"/>
                             <constraint firstItem="Wuc-fY-2t8" firstAttribute="leading" secondItem="blC-Oa-2Yz" secondAttribute="leading" constant="20" id="szw-z2-WQe"/>
                             <constraint firstItem="blC-Oa-2Yz" firstAttribute="trailing" secondItem="GaW-nf-aYp" secondAttribute="trailing" constant="20" id="uv1-Je-DSt"/>
+                            <constraint firstItem="blC-Oa-2Yz" firstAttribute="trailing" secondItem="kqD-Uq-4Vi" secondAttribute="trailing" constant="20" id="ykw-dq-TZb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="blC-Oa-2Yz"/>
                     </view>
@@ -98,6 +107,7 @@
                         <outlet property="heightLabel" destination="bJ2-sF-Qlu" id="Md5-Dt-erZ"/>
                         <outlet property="pokemonImage" destination="Wuc-fY-2t8" id="MYq-UJ-Ci1"/>
                         <outlet property="pokemonNameLabel" destination="mvw-qU-2dr" id="4kl-RA-Khk"/>
+                        <outlet property="pokemonTypesLabel" destination="kqD-Uq-4Vi" id="Ndd-rl-evH"/>
                         <outlet property="weightLabel" destination="GaW-nf-aYp" id="8aW-dW-uo0"/>
                     </connections>
                 </viewController>

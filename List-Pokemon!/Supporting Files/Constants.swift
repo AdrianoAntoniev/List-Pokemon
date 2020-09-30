@@ -17,10 +17,13 @@ struct Constants {
     static let DETAILS_SEGUE_NAME = "DetailsSegue"
     static let SEARCH_BAR_PLACEHOLDER = "Digite o nome do Pokémon"
     static let BLANK_IMAGE_NAME = "sem-imagem.jpeg"
+    static let NAV_ITEM_TITLE = "Lista de Pokémons"
+    static let BACK_BUTTON_TEXT = "Voltar"
     
     // Constants for label text
     static let FONT_NAME = "American Typewriter"
     static let FONT_SIZE = 20
+    static let FONT_TITLE_SIZE = 28
 
     // Keys for json queries
     static let POKEMON_NAME_KEY = "name"

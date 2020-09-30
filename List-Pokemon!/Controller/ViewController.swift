@@ -27,6 +27,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
             
+        navigationItem.title = Constants.NAV_ITEM_TITLE
+        self.navigationController!.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: Constants.FONT_NAME, size: CGFloat(Constants.FONT_TITLE_SIZE))!]
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: Constants.BACK_BUTTON_TEXT, style: .plain, target: nil, action: nil)
+        
         defineDelegatesAndDependencies()
         populateTableView()
     }
