@@ -16,5 +16,14 @@ struct Constants {
     static let REUSABLE_CELL_FOR_TABLEVIEW = "Cell"
     static let DETAILS_SEGUE_NAME = "DetailsSegue"
     static let SEARCH_BAR_PLACEHOLDER = "Digite o nome do Pokémon"
+    static let BLANK_IMAGE_NAME = "sem-imagem.jpeg"
     
+    // Constants for label text
+    static let FONT_NAME = "American Typewriter"
+    static let FONT_SIZE = 20
+
+    // Keys for json queries
+    static let POKEMON_NAME_KEY = "name"
+    static let POKEMON_URL_KEY = "url"
 }
+

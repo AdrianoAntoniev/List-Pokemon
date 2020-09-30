@@ -20,12 +20,13 @@ class ViewController: UIViewController {
     var isFiltering: Bool {
       return searchController.isActive && !isSearchBarEmpty
     }
-
     
     let searchController = UISearchController(searchResultsController: nil)
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+            
         defineDelegatesAndDependencies()
         populateTableView()
     }
@@ -34,10 +35,12 @@ class ViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
+        navigationItem.searchController = searchController
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = Constants.SEARCH_BAR_PLACEHOLDER
-        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+        
         definesPresentationContext = true
     }
     
@@ -51,10 +54,10 @@ class ViewController: UIViewController {
                 
                 if let pokemonsNameAndUrlArrayJSON = allData.results {
                     for pokemonNameAndURLJSON in pokemonsNameAndUrlArrayJSON {
-                        if let pokemonName = pokemonNameAndURLJSON["name"],
-                                let pokemonUrl = pokemonNameAndURLJSON["url"] {
-                            let pokemon = PokemonNameAndUrl(name: pokemonName.replacingOccurrences(of: "-", with: " ").capitalized,
-                                                            url: pokemonUrl)
+                        if let pokemonName = pokemonNameAndURLJSON[Constants.POKEMON_NAME_KEY],
+                            let pokemonUrl = pokemonNameAndURLJSON[Constants.POKEMON_URL_KEY] {
+                            
+                            let pokemon = PokemonNameAndUrl(name: pokemonName.replacingOccurrences(of: "-", with: " ").capitalized, url: pokemonUrl)
                             
                             self.pokemonsNameAndUrl.append(pokemon)
                             
@@ -98,7 +101,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.REUSABLE_CELL_FOR_TABLEVIEW)
+        cell?.textLabel?.font = UIFont(name: Constants.FONT_NAME, size: CGFloat(Constants.FONT_SIZE))
         
         if isFiltering {
             cell?.textLabel?.text = filteredPokemons[indexPath.row].name
@@ -106,13 +110,13 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             cell?.textLabel?.text = pokemonsNameAndUrl[indexPath.row].name
         }
         
-        
         return cell!
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let pokemonToDetail: PokemonNameAndUrl = isFiltering ? filteredPokemons[indexPath.row] : pokemonsNameAndUrl[indexPath.row]
         
+        searchController.searchBar.text = ""
         performSegue(withIdentifier: Constants.DETAILS_SEGUE_NAME, sender: pokemonToDetail)
     }
 }
@@ -123,3 +127,4 @@ extension ViewController: UISearchResultsUpdating {
         filterContentForSearchText(searchBar.text!)
     }
 }
+

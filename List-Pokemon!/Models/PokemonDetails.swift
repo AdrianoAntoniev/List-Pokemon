@@ -20,7 +20,7 @@ struct PokemonDetailsData: Decodable {
             var officialArtwork: OfficialArtwork
             
             struct OfficialArtwork: Decodable {
-                var frontDefault: String
+                var frontDefault: String?
             }
             
             private enum CodingKeys : String, CodingKey {
