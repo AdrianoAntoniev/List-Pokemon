@@ -122,6 +122,4 @@ extension ViewController: UISearchResultsUpdating {
         let searchBar = searchController.searchBar
         filterContentForSearchText(searchBar.text!)
     }
-    
-    
 }
