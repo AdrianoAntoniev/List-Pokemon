@@ -16,6 +16,7 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var heightLabel: UILabel!
     @IBOutlet weak var tagListView: TagListView!
     
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     var pokemonUrl: String?
     var pokemonName: String?
@@ -23,6 +24,7 @@ class DetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.spinner.startAnimating()
         configureTagListView()
         
         if let name = pokemonName, let url = pokemonUrl {
@@ -52,6 +54,9 @@ class DetailsViewController: UIViewController {
                         
                         self.heightLabel.text = "Altura: \(pokeDecoded.height)"
                         self.weightLabel.text = "Peso: \(pokeDecoded.weight)"
+                        
+                        self.spinner.stopAnimating()
+                        self.spinner.isHidden = true
                     }
                 }
                 

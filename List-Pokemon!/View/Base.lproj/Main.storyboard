@@ -83,6 +83,10 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="XaC-vp-VeW">
+                                <rect key="frame" x="157" y="398" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -111,6 +115,7 @@
                         <outlet property="heightLabel" destination="bJ2-sF-Qlu" id="Md5-Dt-erZ"/>
                         <outlet property="pokemonImage" destination="Wuc-fY-2t8" id="MYq-UJ-Ci1"/>
                         <outlet property="pokemonNameLabel" destination="mvw-qU-2dr" id="4kl-RA-Khk"/>
+                        <outlet property="spinner" destination="XaC-vp-VeW" id="vY8-Cg-YIX"/>
                         <outlet property="tagListView" destination="f7q-oZ-cX1" id="DnX-ME-6IN"/>
                         <outlet property="weightLabel" destination="GaW-nf-aYp" id="8aW-dW-uo0"/>
                     </connections>
