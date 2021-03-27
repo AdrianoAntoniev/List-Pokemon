@@ -5,5 +5,6 @@ Selecionando um Pokémon a partir de uma lista, é possível exibir algumas cara
 
 Foi utilizada a biblioteca Tag List View (https://github.com/ElaWorkshop/TagListView) para colocar o(s) tipo(s) de cada Pokémon na tela de detalhes.
 
-
-![alt-text](https://github.com/AdrianoAntoniev/List-Pokemon/blob/master/pokemon.gif)
+<p align="center">
+  <img src="https://github.com/AdrianoAntoniev/List-Pokemon/blob/master/pokemon.gif?raw=true" alt="App gif"/>
+ </p>
